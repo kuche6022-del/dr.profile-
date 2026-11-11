@@ -171,3 +171,70 @@ a:focus-visible,button:focus-visible{outline:2px solid #c5a16c;outline-offset:4p
 @media(prefers-reduced-motion:reduce){
   .gallery-card,.gallery-progress span{transition:none!important}
 }
+
+
+/* Typography refinement and better portrait framing */
+body{
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  line-height:1.75;
+  letter-spacing:-.01em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,.brand-mark,.hub-monogram{
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:500;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.hero h1{
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+.intro h2,.section-heading h2,.gallery-heading h2,
+.hub-copy h2,.credentials-section h2,.contact-section h2,
+.manifesto h2{
+  line-height:1.1;
+  letter-spacing:-.035em;
+}
+.hero-intro,.intro-copy p,.section-heading>p,.gallery-heading>p,
+.service-card p,.hub-copy>p,.contact-section>p{
+  line-height:1.85;
+}
+.nav a,.button,.text-link,.underlined-link,
+.section-kicker,.eyebrow,.credentials,.hero-bottom{
+  font-family:'DM Sans',sans-serif;
+  letter-spacing:.055em;
+}
+.service-card h3,.gallery-card h3{
+  letter-spacing:-.025em;
+  line-height:1.2;
+}
+.gallery-card p{font-size:13px;line-height:1.8}
+
+/* Keep the full face and headwrap comfortably in frame */
+.portrait-placeholder{
+  isolation:isolate;
+  background:#142235;
+}
+.profile-photo{
+  object-fit:cover;
+  object-position:50% 18%;
+  transform:scale(1.015);
+  transform-origin:center 20%;
+}
+.portrait-caption{
+  padding-top:44px;
+  padding-bottom:19px;
+}
+@media(max-width:650px){
+  body{font-size:14px}
+  .hero h1{line-height:1.04;letter-spacing:-.04em}
+  .profile-photo{object-position:50% 16%;transform:scale(1.02)}
+  .portrait-caption{padding:38px 14px 15px}
+  .gallery-card p{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .profile-photo{transform:none}
+}

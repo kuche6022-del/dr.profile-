@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: dr-grace-obar-profile
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .

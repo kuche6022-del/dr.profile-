@@ -33,27 +33,64 @@ document.addEventListener('keydown', event => {
 });
 
 
-/* Accessible horizontal gallery controls */
+/* Automatic fading gallery with manual controls, swipe and accessibility support */
 const galleryTrack = document.getElementById('moments-track');
 if (galleryTrack) {
   const galleryCards = [...galleryTrack.querySelectorAll('.gallery-card')];
   const progress = document.querySelector('.gallery-progress span');
   const count = document.querySelector('.gallery-count');
-  const updateGallery = () => {
-    const maxScroll = galleryTrack.scrollWidth - galleryTrack.clientWidth;
-    const ratio = maxScroll > 0 ? galleryTrack.scrollLeft / maxScroll : 0;
-    if (progress) progress.style.width = `${Math.max(33.333, (ratio * 66.667) + 33.333)}%`;
-    if (count) {
-      const active = Math.min(galleryCards.length, Math.max(1, Math.round(ratio * (galleryCards.length - 1)) + 1));
-      count.textContent = `${String(active).padStart(2, '0')} — ${String(galleryCards.length).padStart(2, '0')}`;
-    }
+  const previous = document.querySelector('[data-gallery-prev]');
+  const next = document.querySelector('[data-gallery-next]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let activeIndex = 0;
+  let timer = null;
+  let touchStartX = 0;
+
+  const showSlide = (index) => {
+    activeIndex = (index + galleryCards.length) % galleryCards.length;
+    galleryCards.forEach((card, i) => {
+      const active = i === activeIndex;
+      card.classList.toggle('is-active', active);
+      card.setAttribute('aria-hidden', String(!active));
+      card.inert = !active;
+    });
+    if (progress) progress.style.width = `${((activeIndex + 1) / galleryCards.length) * 100}%`;
+    if (count) count.textContent = `${String(activeIndex + 1).padStart(2, '0')} — ${String(galleryCards.length).padStart(2, '0')}`;
   };
-  document.querySelector('[data-gallery-prev]')?.addEventListener('click', () => {
-    galleryTrack.scrollBy({ left: -galleryTrack.clientWidth * 0.82, behavior: 'smooth' });
+
+  const stopAutoplay = () => {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  };
+  const startAutoplay = () => {
+    stopAutoplay();
+    if (reducedMotion || galleryCards.length < 2 || document.hidden) return;
+    timer = window.setInterval(() => showSlide(activeIndex + 1), 5600);
+  };
+  const goNext = () => { showSlide(activeIndex + 1); startAutoplay(); };
+  const goPrevious = () => { showSlide(activeIndex - 1); startAutoplay(); };
+
+  next?.addEventListener('click', goNext);
+  previous?.addEventListener('click', goPrevious);
+  galleryTrack.addEventListener('mouseenter', stopAutoplay);
+  galleryTrack.addEventListener('mouseleave', startAutoplay);
+  galleryTrack.addEventListener('focusin', stopAutoplay);
+  galleryTrack.addEventListener('focusout', startAutoplay);
+  galleryTrack.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight') { event.preventDefault(); goNext(); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); goPrevious(); }
   });
-  document.querySelector('[data-gallery-next]')?.addEventListener('click', () => {
-    galleryTrack.scrollBy({ left: galleryTrack.clientWidth * 0.82, behavior: 'smooth' });
-  });
-  galleryTrack.addEventListener('scroll', updateGallery, { passive: true });
-  updateGallery();
+  galleryTrack.addEventListener('touchstart', event => {
+    touchStartX = event.changedTouches[0].clientX;
+    stopAutoplay();
+  }, { passive: true });
+  galleryTrack.addEventListener('touchend', event => {
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) > 45) distance < 0 ? goNext() : goPrevious();
+    else startAutoplay();
+  }, { passive: true });
+  document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
+
+  showSlide(0);
+  startAutoplay();
 }

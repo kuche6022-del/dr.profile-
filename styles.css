@@ -238,3 +238,153 @@ h1,h2,h3,.brand-mark,.hub-monogram{
 @media(prefers-reduced-motion:reduce){
   .profile-photo{transform:none}
 }
+
+
+/* Professional realism pass — calmer editorial layout and stronger hierarchy */
+:root{
+  --ink:#172536;
+  --navy:#132238;
+  --gold:#ad8955;
+  --paper:#f8f7f3;
+  --muted:#65717d;
+  --line:#dedbd3;
+}
+body{background:var(--paper);color:var(--ink);line-height:1.75}
+.announcement{height:29px;background:#e9e3d8;color:#665337;font-size:8px;letter-spacing:.16em}
+.pulse{background:#ad8955;box-shadow:0 0 0 4px #ad895522}
+.site-header{height:80px;background:rgba(248,247,243,.97);border-bottom:1px solid #17253614;box-shadow:0 4px 18px #17253608}
+.brand-mark{font-size:29px}
+.brand-copy strong{font-size:9px;letter-spacing:.14em}
+.brand-copy small{font-size:8px}
+.nav{gap:27px;font-size:10px}
+.nav a:not(.nav-cta){color:#4f5d6a}
+.nav-cta{padding:12px 17px;background:#172536}
+.hero{
+  min-height:570px;
+  background:linear-gradient(112deg,#132238 0%,#192d43 58%,#20364b 100%);
+  padding-top:68px;padding-bottom:55px;
+}
+.hero-grid{opacity:.35;background-size:88px 88px}
+.hero:after{opacity:.45}
+.eyebrow,.section-kicker{font-size:8px;letter-spacing:.17em}
+.hero h1{font-size:clamp(54px,6.2vw,82px);line-height:1.04;letter-spacing:-.045em;margin:24px 0}
+.hero-intro{max-width:420px;font-size:14px;color:#d0d6dc}
+.button{padding:15px 19px;font-size:9px}
+.button-gold{background:#d0b17e}
+.credentials{margin-top:36px;font-size:8px;color:#c0c8d0}
+.hero-art{height:390px}
+.portrait-placeholder{
+  width:min(320px,76%);height:365px;
+  border:5px solid #ffffff12;border-radius:3px;
+  box-shadow:18px 18px 0 #d0b17e20,0 22px 55px #0003;
+}
+.portrait-placeholder:before,.portrait-placeholder:after{display:none}
+.profile-photo{object-position:50% 18%;transform:none}
+.portrait-caption{padding:45px 18px 17px;background:linear-gradient(transparent,#101b2bf2);font-size:15px}
+.floating-note{right:-5px;bottom:38px;padding:14px 17px;font-size:12px;box-shadow:0 10px 30px #0002}
+.orbit{opacity:.28}
+.side-index{top:8px}
+.hero-bottom{font-size:7px;letter-spacing:.14em}
+.section-pad{padding-top:76px;padding-bottom:76px}
+.intro{background:#f8f7f3}
+.intro-layout{gap:7vw;margin-top:28px}
+.section-pad h2,.section-heading h2,.hub h2,.credentials-section h2{font-size:clamp(37px,4.6vw,58px);line-height:1.12}
+.lead{font-size:21px;color:#26384b}
+.intro-copy p:not(.lead),.section-heading>p,.hub-copy>p{font-size:12px;color:#626d77}
+.stat-ribbon{margin-top:58px;padding:22px 0;border-color:#d8d5cd}
+.stat-ribbon strong{font-size:8px;letter-spacing:.14em}
+.stat-ribbon span{font-size:14px}
+.services,.credentials-section{background:#efeee9}
+.section-heading{margin-bottom:35px}
+.section-heading>p{max-width:300px}
+.service-grid{background:#dedbd3;border-color:#dedbd3;gap:1px}
+.service-card{background:#faf9f6;min-height:220px;padding:25px 24px}
+.service-card:hover{background:#fff;box-shadow:0 10px 25px #17253610}
+.service-icon{font-size:23px;margin:5px 0 19px}
+.service-card h3{font-size:21px}
+.service-card p{font-size:11px;color:#68727b;min-height:56px}
+.service-card-dark{background:#1b2c40;color:#fff}
+.service-card-dark p{color:#c1c9d1}
+.gallery-section{background:#f5f3ed}
+.gallery-heading{gap:45px}
+.gallery-heading h2{font-size:clamp(40px,4.8vw,62px)}
+.gallery-heading>p{font-size:12px;color:#606b75}
+.gallery-track{width:min(100%,850px);box-shadow:0 15px 38px #17253612}
+.gallery-card{background:#fff}
+.gallery-card img{height:clamp(250px,36vw,390px);object-position:center}
+.gallery-card figcaption{padding:22px 26px 25px;border-top:2px solid #b89561}
+.gallery-card h3{font-size:23px}
+.gallery-card p{font-size:12px;color:#626d77}
+.gallery-arrow{width:39px;height:39px;border-color:#c5a16c}
+.manifesto{background:#17283c;padding-top:78px;padding-bottom:72px}
+.manifesto h2{font-size:clamp(40px,5vw,64px)}
+.manifesto>p{font-size:12px;color:#c2cad2}
+.hub{background:#f8f7f3}
+.hub-visual{background:linear-gradient(145deg,#eeeae1,#e6e1d7);min-height:330px}
+.hub-ring{width:245px;height:245px}
+.hub-monogram{font-size:60px}
+.hub-copy h2{font-size:clamp(38px,4.6vw,58px)}
+.hub-copy>p{font-size:12px}
+.hub-points span{font-size:10px}
+.credentials-section h2{margin:20px 0 35px}
+.credential-list div{padding-top:20px;padding-bottom:20px}
+.credential-list strong{font-size:20px}
+.credential-list small{font-size:9px}
+.credential-note{max-width:720px;font-size:9px}
+.contact-section{background:linear-gradient(115deg,#132238,#1b3047);padding-top:82px}
+.contact-section h2{font-size:clamp(44px,5.6vw,70px)}
+.contact-section>p{font-size:12px}
+.contact-section .button-gold{background:#d0b17e}
+.contact-meta{font-size:7px;letter-spacing:.13em}
+.footer{background:#101c2b;padding-top:23px;padding-bottom:23px}
+a:focus-visible,button:focus-visible{outline-color:#b89561}
+@media(max-width:850px){
+ .nav{gap:15px}
+ .hero{padding-left:7vw;padding-right:7vw}
+ .hero-bottom{left:7vw;right:7vw}
+ .section-pad{padding-left:7vw;padding-right:7vw}
+}
+@media(max-width:650px){
+ .announcement{height:27px;font-size:6.5px;letter-spacing:.1em}
+ .site-header{height:68px}
+ .nav{top:68px}
+ .hero{padding:48px 7vw 62px;min-height:0}
+ .hero h1{font-size:55px}
+ .hero-intro{font-size:13px}
+ .hero-art{height:315px;margin-top:18px}
+ .portrait-placeholder{width:225px;height:280px}
+ .profile-photo{object-position:50% 17%;transform:none}
+ .floating-note{right:0;bottom:26px;padding:12px 13px;font-size:10px}
+ .credentials{margin-top:27px}
+ .hero-bottom{font-size:6px;letter-spacing:.1em}
+ .section-pad{padding:58px 7vw}
+ .intro-layout{gap:20px}
+ .section-pad h2,.section-heading h2,.hub h2,.credentials-section h2{font-size:40px}
+ .lead{font-size:19px}
+ .stat-ribbon{margin-top:32px;gap:14px}
+ .section-heading{margin-bottom:25px}
+ .service-grid{grid-template-columns:1fr}
+ .service-card{min-height:190px;padding:21px}
+ .service-card p{min-height:0}
+ .gallery-heading{gap:10px}
+ .gallery-heading h2{font-size:40px}
+ .gallery-track{width:100%}
+ .gallery-card img{height:245px}
+ .gallery-card figcaption{min-height:0;padding:18px}
+ .gallery-card h3{font-size:21px}
+ .gallery-card p{font-size:11px}
+ .manifesto{padding:60px 18px}
+ .manifesto h2{font-size:44px}
+ .hub-visual{height:270px;min-height:270px;order:2}
+ .hub-copy{order:1}
+ .credential-list{grid-template-columns:1fr 1fr}
+ .credential-list strong{font-size:18px}
+ .contact-section{padding:62px 7vw 32px}
+ .contact-section h2{font-size:47px}
+ .contact-meta{margin-top:45px}
+ .footer{padding:22px 7vw}
+}
+@media(prefers-reduced-motion:reduce){
+ .profile-photo{transform:none}
+ .service-card,.gallery-card,.gallery-arrow{transition:none!important}
+}

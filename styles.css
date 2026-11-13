@@ -400,3 +400,9 @@ a:focus-visible,button:focus-visible{outline-color:#b89561}
 /* Additional coaching-hub event photograph */
 .hub-event-photo{position:absolute;z-index:4;left:5%;bottom:9%;width:24%;height:30%;object-fit:cover;object-position:center;border:5px solid #f5f0e5;outline:1px solid #b38b4e;box-shadow:0 12px 28px #14223530;border-radius:2px;transform:rotate(-4deg)}
 @media(max-width:650px){.hub-event-photo{left:3%;bottom:11%;width:31%;height:28%;border-width:3px}}
+
+/* Coaching Hub: show only the requested photograph */
+.hub-visual{position:relative;overflow:hidden;background:#e8e4da;min-height:330px;height:350px;}
+.hub-only-photo{display:block;width:100%;height:100%;min-height:330px;object-fit:cover;object-position:center;border:0;border-radius:0;box-shadow:none;outline:0;}
+.hub-visual .hub-ring,.hub-visual .hub-label,.hub-visual .hub-stamp{display:none!important}
+@media(max-width:650px){.hub-visual{height:270px;min-height:270px}.hub-only-photo{min-height:270px}}

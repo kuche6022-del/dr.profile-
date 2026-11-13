@@ -396,3 +396,7 @@ a:focus-visible,button:focus-visible{outline-color:#b89561}
 .hub-label{z-index:3;bottom:24px;font-size:clamp(8px,1vw,11px);letter-spacing:.22em;color:#89734f;text-align:center;width:100%}
 .hub-stamp{position:absolute;z-index:4;right:9%;top:12%;width:112px;height:112px;border:1px solid #b38b4e;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:10px;line-height:1.7;letter-spacing:.16em;color:#9a773e;background:#eee8dcdd}
 @media(max-width:650px){.hub-visual{height:340px}.hub-purpose-photo{width:82%;height:62%;border-width:4px}.hub-ring{width:76%;height:76%}.hub-stamp{width:82px;height:82px;right:4%;top:9%;font-size:8px}.hub-label{bottom:20px;font-size:7px;letter-spacing:.15em}}
+
+/* Additional coaching-hub event photograph */
+.hub-event-photo{position:absolute;z-index:4;left:5%;bottom:9%;width:24%;height:30%;object-fit:cover;object-position:center;border:5px solid #f5f0e5;outline:1px solid #b38b4e;box-shadow:0 12px 28px #14223530;border-radius:2px;transform:rotate(-4deg)}
+@media(max-width:650px){.hub-event-photo{left:3%;bottom:11%;width:31%;height:28%;border-width:3px}}

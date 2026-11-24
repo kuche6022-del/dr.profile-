@@ -7,6 +7,35 @@
 <meta name="theme-color" content="#533c65">
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/style.css">
+
+<style id="section-layout-refinement">
+/* Clearer, shorter editorial sections across the site */
+main > section { scroll-margin-top: 90px; }
+.content-section { padding: clamp(38px, 5.2vw, 68px) 24px !important; }
+.content-section .section-inner { width: min(100%, 1060px); margin-inline: auto; }
+.content-section .eyebrow { margin: 0 0 14px; }
+.content-section h2 { max-width: 780px; margin: 0 0 18px; line-height: 1.12; }
+.content-section .section-copy { max-width: 760px; margin: 0; line-height: 1.85; }
+.content-section p { max-width: 780px; }
+.content-section .card-grid { margin-top: 24px; gap: 16px; }
+.content-section .service-card { min-height: 0; padding: 24px; }
+.content-section + .content-section { border-top: 1px solid rgba(35, 45, 55, .08); }
+.closing { padding: clamp(48px, 6vw, 76px) 24px !important; }
+.closing .section-inner { width: min(100%, 960px); margin-inline: auto; }
+.hero { min-height: 0; padding-top: clamp(54px, 7vw, 88px); padding-bottom: clamp(48px, 6vw, 72px); }
+.hero-copy { max-width: 700px; }
+.hero-copy h1 { max-width: 760px; }
+.hero-copy .lead { max-width: 690px; line-height: 1.65; }
+@media (max-width: 650px) {
+  .content-section { padding: 38px 20px !important; }
+  .content-section h2 { font-size: clamp(29px, 8vw, 40px); }
+  .content-section .card-grid { grid-template-columns: 1fr; }
+  .content-section .service-card { padding: 21px; }
+  .closing { padding: 46px 20px !important; }
+  .hero { padding-top: 46px; padding-bottom: 44px; }
+  .hero-copy h1 { font-size: clamp(38px, 11vw, 54px); line-height: 1.06; }
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

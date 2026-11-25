@@ -45,3 +45,10 @@ html[data-theme-mode="dark"] .site-header>.theme-toggle{background:#263b43;color
 .site-header>.main-nav{margin-left:0}
 @media(max-width:680px){.site-header>.theme-toggle{padding:8px 10px;min-height:38px;font-size:10px}.site-header>.menu-toggle{flex:0 0 auto}.site-header>.main-nav{top:100%}}
 html[data-theme-mode="dark"] .site-header>.theme-toggle{background:#263b43;color:#f3f5f2;border-color:#d0ad75}
+
+
+/* Colour mode is an item inside the options/navigation menu */
+.site-header>.theme-toggle{display:none!important}
+.main-nav>.theme-toggle{display:inline-flex;align-items:center;justify-content:center;align-self:center;min-height:38px;padding:9px 13px;margin:0;border:1px solid #b9915d;background:#fff;color:#172b3a;border-radius:3px;font:700 11px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;box-shadow:none}
+html[data-theme-mode="dark"] .main-nav>.theme-toggle{background:#263b43;color:#f3f5f2;border-color:#d0ad75}
+@media(max-width:680px){.main-nav>.theme-toggle{align-self:stretch;justify-content:flex-start;margin:5px 0;padding:12px 9px}.main-nav.open>.theme-toggle{display:inline-flex}}
